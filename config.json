@@ -1,0 +1,87 @@
+{
+  "TOKENS": [
+    {
+      "symbol": "ETH",
+      "names": "Ethereum",
+      "chainName": "ethereum",
+      "decimals": 18,
+      "isNative": true,
+      "priceKey": "ETH_USD",
+      "isReady": false,
+      "icon": "https://dweboss.oss-ap-southeast-1.aliyuncs.com/defi/abank/imgs/ico_ETH.svg",
+      "originChain": "ethereum",
+      "mapSymbol": "aETH"
+    },
+    {
+      "symbol": "aETH",
+      "names": "Ethereum",
+      "chainName": "alaya",
+      "decimals": 18,
+      "isNative": false,
+      "priceKey": "ETH_USD",
+      "isReady": false,
+      "address": "atx1qc4x9p5zc9fntpckkd64ac9tf32p707a5x586p",
+      "icon": "https://dweboss.oss-ap-southeast-1.aliyuncs.com/defi/abank/imgs/ico_aETH.svg",
+      "originChain": "ethereum",
+      "mapSymbol": "ETH"
+    },
+    {
+      "symbol": "USDT",
+      "names": "Tether USD",
+      "chainName": "ethereum",
+      "decimals": 6,
+      "isNative": false,
+      "priceKey": "USDT_USD",
+      "isReady": false,
+      "address": "0x5052fea98985F64d23d550639F9CD1D18e672EB2",
+      "icon": "https://dweboss.oss-ap-southeast-1.aliyuncs.com/defi/abank/imgs/icon_USDT.svg",
+      "originChain": "ethereum",
+      "mapSymbol": "aUSDT"
+    },
+    {
+      "symbol": "aUSDT",
+      "names": "Tether USD",
+      "chainName": "alaya",
+      "decimals": 6,
+      "isNative": false,
+      "priceKey": "USDT_USD",
+      "isReady": false,
+      "address": "atx1ahv8uvt4uzhjycz52tsutr6uen00724asaqxr8",
+      "icon": "https://dweboss.oss-ap-southeast-1.aliyuncs.com/defi/abank/imgs/icon_aUSDT.svg",
+      "originChain": "ethereum",
+      "mapSymbol": "USDT"
+    },
+    {
+      "symbol": "eATP",
+      "names": "Alaya",
+      "chainName": "ethereum",
+      "decimals": 18,
+      "isNative": false,
+      "priceKey": "ATP_USD",
+      "isReady": false,
+      "address": "0x2d8630C3Ff7721B914A14fe550839E8814b5C238",
+      "icon": "https://dweboss.oss-ap-southeast-1.aliyuncs.com/defi/abank/imgs/icon_eATP.svg",
+      "originChain": "alaya",
+      "mapSymbol": "ATP"
+    },
+    {
+      "symbol": "ATP",
+      "names": "Alaya",
+      "chainName": "alaya",
+      "decimals": 18,
+      "isNative": true,
+      "priceKey": "ATP_USD",
+      "isReady": false,
+      "icon": "https://dweboss.oss-ap-southeast-1.aliyuncs.com/defi/abank/imgs/ico_ATP.svg",
+      "originChain": "alaya",
+      "mapSymbol": "eATP"
+    }
+  ],
+  "CONSTANTS": {
+    "SamuraiDownloadAddress": "https://github.com/AlayaNetwork/Samurai/releases/download/v8.0.11/samurai-chrome-8.0.11.zip",
+    "MetamaskDownloadAddress": "https://metamask.io/",
+    "customerMail": "service@latticex.foundation",
+    "queryInterval": 300000,
+    "earnMoneyAddress": "http://10.10.8.181"
+  }
+}
