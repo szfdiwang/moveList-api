@@ -1,5 +1,6 @@
 const movie = require("../../models").movie;
 const { Op } = require("sequelize");
+const sequelize = require("sequelize");
 
 const test = async ctx => {
   // console.log("ctx ======>", ctx);
@@ -8,9 +9,24 @@ const test = async ctx => {
   console.log(movieList);
 };
 
+const queryMovieByPage = async ctx => {
+  console.log("ctx.request.body ======>", ctx.request.body);
+  const body = ctx.request.body;
+  const page = body.curPage;
+  const size = body.pageSize;
+
+  const list = await movie.findAll({
+    order: [["id", "desc"]],
+    limit: size,
+    offset: (page - 1) * size,
+  });
+  ctx.body = list;
+};
+
 const addMovie = async ctx => {};
 
 const queryMovieByName = async ctx => {
+  ctx.body = "test success!!!";
   //  从ctx读取get传值
   console.log("ctx.params =========>", ctx.params);
   console.log("ctx.request.query =========>", ctx.request.query);
@@ -28,6 +44,32 @@ const queryMovieByName = async ctx => {
     },
   });
   console.log(movieList);
+};
+
+const findMovie = async ctx => {
+  const name = ctx.query.name;
+  const movieList = await movie.findAndCountAll({
+    // where: {
+    //   name: {
+    //     [op.eq]: name,
+    //   },
+    // },
+    // order: [["id", "ASC"]],
+    // order: [sequelize.fn("max", sequelize.col("id"))],
+    // group: "name",
+    // offset: 2,
+    // limit: 5,
+    // order: [["id", "ASC"]],
+    where: {
+      name: {
+        [Op.like]: "%人%",
+      },
+    },
+    // offset: 3,
+    limit: 10,
+  });
+  console.log(movieList);
+  ctx.body = movieList;
 };
 
 const singleCreateMovie = async ctx => {
@@ -56,4 +98,4 @@ const deleteMovie = async (ctx, next) => {
   console.log(list);
 };
 
-module.exports = { test, addMovie, queryMovieByName, singleCreateMovie, deleteMovie, bathCreateMovie };
+module.exports = { test, queryMovieByPage, addMovie, queryMovieByName, singleCreateMovie, deleteMovie, bathCreateMovie, findMovie };
